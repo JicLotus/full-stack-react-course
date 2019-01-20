@@ -1,0 +1,22 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JicLotus/full-stack-react-course.git"
+  },
+  "author": "Jose Ignacio Castelli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JicLotus/full-stack-react-course/issues"
+  },
+  "homepage": "https://github.com/JicLotus/full-stack-react-course#readme",
+  "devDependencies": {
+    "lite-server": "^2.4.0"
+  }
+}
