@@ -52,14 +52,13 @@
                 </div>
 
                 <div class="col-12 col-sm-3 align-self-center">
-                    <button class="btn btn-warning btn-block" type="button" href="#Reserve">Reserve Table</button>
+                    <a href="#reserveForm"><button class="btn btn-sm btn-warning btn-block" type="button">Reserve Table</button></a>
                 </div>
             </div>
         </div>
     </header>
-
+    
     <div class="container">
-
         <div class="row row-content align-items-center">
 
             <div class="col-sm col-md flex-first">
@@ -105,7 +104,6 @@
     
         </div>
 
-
         <div class="row row-content">
 
             <div class="col-sm col-md flex-first">
@@ -132,8 +130,63 @@
 
         <div class="row row-content">
 
-            <div class="col-sm-">
+            <div class="col-sm-3"></div>
+
+            <div class="col-12 col-sm-6" id="reserveForm">
+                <div class="card">
+                    <h3 class="card-header bg-warning text-white">Reserve a Table</h3>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group row">
+                                <label for="firstname" class="col-md-3 col-form-label">Number of guests</label>
+                                <div class="col-md-8">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                        <label class="form-check-label" for="inlineRadio1">1</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                        <label class="form-check-label" for="inlineRadio2">2</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                            <label class="form-check-label" for="inlineRadio3">3</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4">
+                                        <label class="form-check-label" for="inlineRadio4">4</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option5">
+                                        <label class="form-check-label" for="inlineRadio5">5</label>
+                                    </div> 
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="option6">
+                                        <label class="form-check-label" for="inlineRadio6">6</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="firstname" class="col-md-3 col-form-label">Date and Time</label>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control" id="date" name="date" placeholder="Date">
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control" id="time" name="time" placeholder="Time">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-12 col-sm-3"></div>
+                                <div class="col-12 col-sm-4">
+                                    <button class="btn btn-primary" type="button" href="#Reserve">Reserve</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
+
+            <div class="col-sm-3"></div>
 
         </div>
 
