@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
-import { Navbar, NavbarBrand } from 'reactstrap';
 import Menu from './MenuComponent';
 import { DISHES } from '../shared/dishes';
+import Header from './HeaderComponent'
+import Footer from './FooterComponent';
+import Home from './HomeComponent'
 import DishDetail from './DishdetailComponent';
+import {Switch,Route,Redirect} from 'react-router-dom';
+
+
 
 class Main extends Component {
 
@@ -21,15 +26,17 @@ class Main extends Component {
   render() {
     return (
         <div>
-            <Navbar dark color="primary">
             <div className="container">
-                <NavbarBrand href="/">Ristorante Con Fusion</NavbarBrand>
-            </div>
-            </Navbar>
-            <div className="container">
-                <Menu dishes={this.state.dishes}
-                    onClick={(dishId) => this.onDishSelect(dishId)} />
-                <DishDetail dish={this.state.selectedDish} />
+                <Header/>
+                {/* <Menu dishes={this.state.dishes}
+                    onClick={(dishId) => this.onDishSelect(dishId)} /> */}
+                {/* <DishDetail dish={this.state.selectedDish} /> */}
+                <Switch>
+                  <Route path="/home" component={HomePage}/>
+                  <Route exact path="/menu" component={()=> <Menu dishes={this.state.dishes}/>} />
+                  <Redirect to="/home" />
+                </Switch>
+                <Footer/>
             </div>
         </div>
     );
