@@ -24,6 +24,14 @@ class Main extends Component {
   }
 
   render() {
+    
+    const HomePage = () => {
+      return(
+          <Home 
+          />
+      );
+    }
+
     return (
         <div>
             <div className="container">
