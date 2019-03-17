@@ -6,8 +6,9 @@ import { Link } from 'react-router-dom';
 
 
     function RenderDish(dish) {
+        var dish = Object.values(dish)[0];
         return (
-            <div className="col-12 col-md-5 m-1">
+            <div>
                 <Card>
                     <CardImg top src={dish.image} alt={dish.name} />
                     <CardBody>
@@ -34,6 +35,7 @@ import { Link } from 'react-router-dom';
     }
 
 function RenderComments(comments) {
+    comments = Object.values(comments)[0];
     return comments.map((comment) => {
         return (
             <div className="li" key={comment.id}>
@@ -65,7 +67,6 @@ const  DishDetail = (props) => {
             <div className="container">
             <div className="row">
                 <Breadcrumb>
-
                     <BreadcrumbItem><Link to="/menu">Menu</Link></BreadcrumbItem>
                     <BreadcrumbItem active>{props.dish.name}</BreadcrumbItem>
                 </Breadcrumb>
@@ -79,6 +80,7 @@ const  DishDetail = (props) => {
                     <RenderDish dish={props.dish} />
                 </div>
                 <div className="col-12 col-md-5 m-1">
+                    <h4>Comments</h4>
                     <RenderComments comments={props.comments} />
                 </div>
             </div>
