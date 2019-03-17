@@ -5,8 +5,7 @@ import { Link } from 'react-router-dom';
 
 
 
-    function RenderDish(dish) {
-        var dish = Object.values(dish)[0];
+    function RenderDish({dish}) {
         return (
             <div>
                 <Card>
@@ -34,8 +33,7 @@ import { Link } from 'react-router-dom';
         );
     }
 
-function RenderComments(comments) {
-    comments = Object.values(comments)[0];
+function RenderComments({comments}) {
     return comments.map((comment) => {
         return (
             <div className="li" key={comment.id}>
