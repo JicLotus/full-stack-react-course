@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { Control, LocalForm, Errors } from 'react-redux-form';
 import { Loading } from './LoadingComponent';
 import { baseUrl } from '../shared/baseUrl';
+import { FadeTransform, Fade, Stagger } from 'react-animation-components';
 
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !(val) || (val.length <= len);
@@ -110,6 +111,11 @@ class CommentForm extends Component{
 function RenderDish({dish}) {
     return (
         <div>
+            <FadeTransform
+                in
+                transformProps={{
+                    exitTransform: 'scale(0.5) translateY(-50%)'
+                }}>
             <Card>
                 <CardImg top src={baseUrl + dish.image} alt={dish.name} />
                 <CardBody>
@@ -117,6 +123,7 @@ function RenderDish({dish}) {
                     <CardText>{dish.description}</CardText>
                 </CardBody>
             </Card>
+            </FadeTransform>
         </div>
     );
 }
@@ -136,8 +143,10 @@ function renderFormatedDate(date) {
 }
 
 function RenderComments({comments, postComment, dishId}) {
-return comments.map((comment) => {
+    
+return <Stagger in>{comments.map((comment) => {
     return (
+        <Fade in>
         <div className="li" key={comment.id}>
             <br />
             <div className="row">
@@ -155,8 +164,9 @@ return comments.map((comment) => {
                 </div>
             </div>
         </div>
+        </Fade>
     );
-});
+})}</Stagger>
 }
 
 
@@ -201,7 +211,7 @@ const  DishDetail = (props) => {
                         <h4>Comments</h4>
                             <RenderComments comments={props.comments} postComment={props.postComment} dishId={props.dish.id} />
                         <div className="mt-3 mb-2">
-                            <CommentForm dishId={dishId} postComment={postComment} />
+                            <CommentForm dishId={props.dishId} postComment={props.postComment} />
                         </div>
                     </div>
                 </div>
