@@ -30,7 +30,7 @@ class CommentForm extends Component{
     }
 
     handleSubmit(values) {
-        this.props.addComment(this.props.dishId, values.rating, values.author, values.comment);
+        this.props.postComment(this.props.dishId, values.rating, values.author, values.comment);
     }
 
     render(){
@@ -135,7 +135,7 @@ function renderFormatedDate(date) {
     );
 }
 
-function RenderComments({comments, addComment, dishId}) {
+function RenderComments({comments, postComment, dishId}) {
 return comments.map((comment) => {
     return (
         <div className="li" key={comment.id}>
@@ -199,9 +199,9 @@ const  DishDetail = (props) => {
                     </div>
                     <div className="col-12 col-md-5 m-1">
                         <h4>Comments</h4>
-                        <RenderComments comments={props.comments} addComment={props.addComment} dishId={props.dish.id} />
+                            <RenderComments comments={props.comments} postComment={props.postComment} dishId={props.dish.id} />
                         <div className="mt-3 mb-2">
-                            <CommentForm dishId={props.dish.id} addComment={props.addComment} />
+                            <CommentForm dishId={dishId} postComment={postComment} />
                         </div>
                     </div>
                 </div>
